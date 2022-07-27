@@ -60,6 +60,7 @@ const Cart = (props) => {
     console.log(data);
     setIsSubmitting(false);
     setDidSubmit(true);
+    cartCtx.clearCart();
   };
 
   const cartModalContent = <React.Fragment>

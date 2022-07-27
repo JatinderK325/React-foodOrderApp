@@ -2,11 +2,11 @@ import { useRef, useState } from 'react';
 import classes from './Checkout.module.css';
 import React from 'react';
 
-const isEmpty = value => 
+const isEmpty = value =>
     value.trim() === '';
 
 
-const isFiveChars = value => 
+const isFiveChars = value =>
     value.trim().length === 5;
 
 
@@ -54,6 +54,14 @@ const Checkout = (props) => {
         }
 
         // submit cart data
+        const data = {
+            name: enteredName,
+            street: enteredStreet,
+            postalCode: enteredPostalCode,
+            city: enteredCity
+        }
+        props.onConfirm(data);
+
     };
 
     const nameControlClasses = `${classes.control} ${formInputsValidity.name ? '' : classes.invalid}`;
